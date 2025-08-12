@@ -1,0 +1,13 @@
+Para solucionar el simulacro lo primero que deberia hacer seria normalizar las tablas del excel y crear la base de datos una vez creada la base de datos deberia empezar a hacer la conexion al  backend
+
+
+Descargar dependencias a usar
+
+comandos basicos para el examen
+npm init -y 
+npm i mysql2 para conectarnos a la dbs
+npm i express para crear la api que necesitamos
+npm i cors
+npm install csv-parser
+npm install multer csv-parser
+npm install dotenv

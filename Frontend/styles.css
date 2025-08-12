@@ -1,0 +1,173 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuente y fondo general */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Títulos */
+h1, h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Formulario cliente */
+form#clientForm {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+form#clientForm label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #444;
+}
+
+form#clientForm input[type="text"],
+form#clientForm input[type="email"],
+form#clientForm input[type="password"],
+form#clientForm select {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 4px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+form#clientForm input[type="text"]:focus,
+form#clientForm input[type="email"]:focus,
+form#clientForm input[type="password"]:focus,
+form#clientForm select:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Botones dentro del formulario */
+form#clientForm button {
+  background-color: #4a90e2;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+form#clientForm button:hover {
+  background-color: #357abd;
+}
+
+form#clientForm button#cancelEdit {
+  background-color: #d9534f;
+}
+
+form#clientForm button#cancelEdit:hover {
+  background-color: #c9302c;
+}
+
+/* Formulario para subir CSV */
+form#uploadForm {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+form#uploadForm input[type="file"] {
+  flex-grow: 1;
+}
+
+form#uploadForm button {
+  background-color: #5cb85c;
+  border: none;
+  padding: 10px 18px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+form#uploadForm button:hover {
+  background-color: #449d44;
+}
+
+/* Tabla */
+table#clientsTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table#clientsTable thead {
+  background-color: #4a90e2;
+  color: white;
+}
+
+table#clientsTable th,
+table#clientsTable td {
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+table#clientsTable tr:hover {
+  background-color: #f1f7ff;
+}
+
+/* Botones editar y borrar en tabla */
+button.edit {
+  background-color: #f0ad4e; /* naranja */
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: background-color 0.3s ease;
+}
+
+button.edit:hover {
+  background-color: #ec971f;
+}
+
+button.delete {
+  background-color: #d9534f; /* rojo */
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.delete:hover {
+  background-color: #c9302c;
+}
+

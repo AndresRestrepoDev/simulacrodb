@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>CRUD Clientes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <h2>Agregar / Editar Cliente</h2>
+
+    <form id="clientForm">
+        <input type="hidden" id="clientId" />
+        <label>Nombre: <input type="text" id="name" required /></label><br />
+        <label>Email: <input type="email" id="email" required /></label><br />
+        <label>Contraseña: <input type="password" id="password" required /></label><br />
+        <label>Teléfono: <input type="text" id="phone" /></label><br />
+        <label>Dirección: <input type="text" id="address" /></label><br />
+        <label>Género: 
+        <select id="genre">
+            <option value="">Selecciona</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select>
+        </label><br />
+        <button type="submit">Guardar</button>
+        <button type="button" id="cancelEdit" style="display:none;">Cancelar</button>
+    </form>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" id="csvFile" accept=".csv" required />
+        <button type="submit">Subir CSV</button>
+    </form>
+
+    <h1>Lista de Clientes</h1>
+
+    <table border="1" id="clientsTable">
+        <thead>
+        <tr>
+            <th>ID</th><th>Nombre</th><th>Email</th><th>Teléfono</th><th>Dirección</th><th>Género</th><th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="index.js"></script>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const input = document.getElementById('csvFile');
+            if (input.files.length === 0) return alert('Selecciona un archivo CSV');
+
+            const formData = new FormData();
+            formData.append('file', input.files[0]);
+
+            try {
+            const response = await fetch('http://localhost:3001/upload-csv', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+            alert(data.message || 'Archivo subido');
+            } catch (error) {
+            alert('Error al subir archivo');
+            console.error(error);
+            }
+        });
+    </script>
+
+</body>
+</html>
